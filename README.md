@@ -75,13 +75,13 @@ Subscribers who meet all four vulnerability criteria:
 telco-churn-retention-audit/
 ├── README.md
 ├── sql/
-│   ├── 01_data_cleaning_and_views.sql
-│   └── 02_cohort_risk_queries.sql
+│   ├── 01_data_cleaning.sql
+│   └── 02_analytical_queries.sql
 ├── bi/
 │   ├── Telco_Customer_Churn_Dashboard.pbix
 │   └── dashboard_preview.png
 └── data/
-    └── dataset_source.md
+    └── data_source_reference.md
 ```
 
 ---
@@ -91,4 +91,4 @@ telco-churn-retention-audit/
 ### Data Quality Diagnosis
 Identified 11 records where `tenure = 0` and `TotalCharges` was populated with whitespace (`' '`), failing numeric casting. Resolved via `NULLIF(TRIM(TotalCharges), '')::NUMERIC`.
 
-View the full schema definition in [`sql/01_data_cleaning_and_views.sql`](sql/01_data_cleaning_and_views.sql).
+View the full schema definition in [`sql/01_data_cleaning.sql`](01_data_cleaning_view.sql).
